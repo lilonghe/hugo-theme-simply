@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="post archive">
+    <div class="entry-content">
+        <ul>
+            {{ range .Pages }}
+                {{ if not .Params.private }}
+                <li>
+                    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+                </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</article>
+{{ end }}

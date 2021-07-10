@@ -13,23 +13,27 @@
             作者 <code class="notebook">{{ . }}</code>
             {{ end }}
             发表于<i>{{ .Params.Date.Format "2006-01-02 15:04:05" }}</i>
-            {{ if gt  (len .Params.Categories) 0 }}
-            ，添加在分类
-            {{ range .Params.Categories}}
-            <a data-cate="{{ . }}">
-                <code class="notebook">{{ . }}</code>
-            </a>
+            {{ if ne .Params.Categories nil }}
+                {{ if gt (len .Params.Categories) 0  }}
+                ，添加在分类
+                    {{ range .Params.Categories}}
+                    <a data-cate="{{ . }}">
+                        <code class="notebook">{{ . }}</code>
+                    </a>
+                    {{ end }}
+                下
+                {{ end }}
             {{ end }}
-            下
-            {{ end }}
-            {{ if gt  (len .Params.Tags) 0 }}
-            ，并被添加「
-            {{ range .Params.Tags}}
-            <a data-cate="{{ . }}">
-                <code class="notebook">{{ . }}</code>
-            </a>
-            {{ end }}
-            」标签
+            {{ if ne .Params.Tags nil }}
+                {{ if gt (len .Params.Tags) 0  }}
+                ，并被添加「
+                    {{ range .Params.Tags}}
+                    <a data-cate="{{ . }}">
+                        <code class="notebook">{{ . }}</code>
+                    </a>
+                    {{ end }}
+                」标签
+                {{ end }}
             {{ end }}
             {{ if ne .Params.Date .Params.Lastmod }}
             ，最后修改于<i>{{ .Params.Lastmod.Format "2006-01-02 15:04:05" }}</i>

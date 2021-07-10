@@ -25,6 +25,9 @@ a {
     color: #2479CC;
     text-decoration: none;
 }
+ul {
+    margin-left: 25px;
+}
 
 #main {
     background-color: #fff;
@@ -38,6 +41,7 @@ a {
     padding: 0px 20px;
     padding-top: 10px;
     border-bottom: 1px dashed #efefef;
+    min-height: 90vh;
 }
 h1.title {
     font-size: 2em;
@@ -103,4 +107,19 @@ h1.title {
     #main {
         max-width: 80%;
     }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        filter: invert(1);
+    }
+}
+
+/* index */
+.index-slogan {
+    font-family: fantasy;
+}
+
+.index-slogan h1 {
+    margin-bottom: 10px;
 }
