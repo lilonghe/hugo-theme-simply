@@ -34,8 +34,9 @@ ul {
     background-color: #fff;
     max-width: 1390px;
     margin: auto;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding: 40px 10px 20px 10px;
+    word-break: break-all;
+    line-height: 1.5;
 }
 
 .post {
@@ -117,12 +118,12 @@ h1.title {
 }
 
 /* index */
-.index-slogan {
-    font-family: fantasy;
-}
-
 .index-slogan h1 {
     margin-bottom: 10px;
+}
+
+.index-slogan .links {
+    margin-top: 20px;
 }
 
 /* archive */

@@ -1,9 +1,9 @@
 {{ define "main" }}
-{{ $Pages := .Pages }}
+{{ $Pages := .Site.RegularPages }}
 <article class="post archive">
     <div class="entry-content">
-            {{$v1 := where $Pages "Params.Private" "ne" true}}
-            {{ range $v1.GroupByDate "2006-01" }}
+            {{$publicPages := where $Pages "Params.Private" "ne" true}}
+            {{ range $publicPages.GroupByDate "2006-01" }}
                 <h3>{{ .Key }}</h3>
                 <ul>
                     {{ range .Pages }}

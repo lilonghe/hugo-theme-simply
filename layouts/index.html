@@ -1,9 +1,14 @@
 {{ define "main" }}
 <div>
     <div class="index-slogan">
-        <h1>{{ .Site.Params.Author }}</h1>
-        <div class="link">
-            <a href="/post.html">archives</a>
+        <h1>{{ .Site.Title }}</h1>
+        {{ with .Site.Params.Author  }}
+        <small>@{{ . }}</small>
+        {{ end }}
+        <div class="links">
+            {{ if (fileExists "archives.md") }}
+            <a href="/archives">Archives</a>
+            {{ end }}
         </div>
     </div>
 </div>
