@@ -11,4 +11,4 @@ Site Params
 - Support Private Page - Won't show up in the list, only accessible via url.
 
 # Faq
-列表页面本来准备做成按照月份分组的，但是还没找到相关信息，暂时搁置
+目前 archive 必须通过 /post.html 才能访问，没办法转成 archives 或者 archives.html

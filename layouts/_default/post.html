@@ -1,15 +1,21 @@
 {{ define "main" }}
+{{ $Pages := .Pages }}
 <article class="post archive">
     <div class="entry-content">
-        <ul>
-            {{ range .Pages }}
-                {{ if not .Params.private }}
-                <li>
-                    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-                </li>
-                {{ end }}
+            {{$v1 := where $Pages "Params.Private" "ne" true}}
+            {{ range $v1.GroupByDate "2006-01" }}
+                <h3>{{ .Key }}</h3>
+                <ul>
+                    {{ range .Pages }}
+                        {{ if not .Params.private }}
+                        <li>
+                            <a href="{{.Permalink}}">{{.Title}}</a>
+                            <span class="date">{{.Date.Format "2006-01-02 15:04:05"}}</span>
+                        </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
             {{ end }}
-        </ul>
     </div>
 </article>
 {{ end }}
