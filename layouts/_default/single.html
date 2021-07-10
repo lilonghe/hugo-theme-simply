@@ -1,0 +1,46 @@
+{{ define "main" }}
+{{ $section := .Site.GetPage "section" .Section }}
+<article class="post detail">
+    <h1 class="title">{{ .Title }}</h1>
+    <div class="entry-content">
+        {{ .Content }}
+    </div>
+    <p>本文链接：<a href="{{ .Permalink }}">{{ .Permalink }}</a></p>
+    <p>-- EOF --</p>
+    <div class="post-info">
+        <p>
+            {{ with .Site.Params.Author  }}
+            作者 <code class="notebook">{{ . }}</code>
+            {{ end }}
+            发表于<i>{{ .Params.Date.Format "2006-01-02 15:04:05" }}</i>
+            {{ if gt  (len .Params.Categories) 0 }}
+            ，添加在分类
+            {{ range .Params.Categories}}
+            <a data-cate="{{ . }}">
+                <code class="notebook">{{ . }}</code>
+            </a>
+            {{ end }}
+            下
+            {{ end }}
+            {{ if gt  (len .Params.Tags) 0 }}
+            ，并被添加「
+            {{ range .Params.Tags}}
+            <a data-cate="{{ . }}">
+                <code class="notebook">{{ . }}</code>
+            </a>
+            {{ end }}
+            」标签
+            {{ end }}
+            {{ if ne .Params.Date .Params.Lastmod }}
+            ，最后修改于<i>{{ .Params.Lastmod.Format "2006-01-02 15:04:05" }}</i>
+            {{ end }}
+        </p>
+
+        {{ if .Site.Params.showcc }}
+        <p>署名-非商业性使用-禁止演绎 (<a 
+            rel="noreferrer" 
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a>)</p>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

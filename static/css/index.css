@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: auto;
+    min-height: 100%;
+    background-color: #FFF;
+}
+
+body {
+    color: #666;
+    font-family: "思源黑体",arial,sans-serif;
+    -webkit-overflow-scrolling: touch;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6  {
+    font-weight: 300;
+}
+
+a {
+    color: #2479CC;
+    text-decoration: none;
+}
+
+#main {
+    background-color: #fff;
+    max-width: 1390px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.post {
+    padding: 0px 20px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #efefef;
+}
+h1.title {
+    font-size: 2em;
+}
+.post p{
+    margin: 15px 0;
+}
+.post code {
+    font-family: "Consolas","Courier New",Courier,mono,serif;
+    font-size: 80%;
+    margin: 0 2px;
+    padding: 4px 5px;
+    background-color: #f2f2f2;
+    vertical-align: middle;
+    border-radius: 5px;
+    color: #d82451;
+}
+.post .entry-content {
+    font-size: 16px;
+    line-height: 1.8;
+    word-wrap: break-word;
+}
+.post .post-info {
+    font-size: 14px;
+}
+.post img {
+    padding: 0;
+    display: block;
+    border: 1px solid #ccc;
+    margin: 10px 0 5px 0;
+    max-width: 600px;
+}
+.post pre {
+    font-family: "Consolas","Liberation Mono",Courier,monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5d6a6a;
+    padding: 0.6em;
+    border: 1px solid #eee;
+    border-left: 5px solid #ccc;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    position: relative;
+    overflow: hidden;
+}
+.post pre code {
+    background-color: #fff;
+    padding: 0;
+    line-height: 26px;
+    font-size: 12px;
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    #main {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1024px) {
+    #main {
+        max-width: 80%;
+    }
+}
